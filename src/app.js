@@ -23,7 +23,7 @@ store.dispatch(
   addExpense({
     description: "GAS BILL",
     note: "FOR 3 MONTHS",
-    amount: 700,
+    amount: 7,
     createdAt: -1000,
   })
 );
