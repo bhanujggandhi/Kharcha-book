@@ -28,7 +28,7 @@ store.dispatch(
   })
 );
 
-store.dispatch(setTextFilter("ga"));
+store.dispatch(setTextFilter("bi"));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
