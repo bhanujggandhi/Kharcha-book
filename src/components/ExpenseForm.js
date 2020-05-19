@@ -13,6 +13,7 @@ class ExpenseForm extends Component {
     amount: "",
     createdAt: moment(),
     calenderFocus: false,
+    error: "",
   };
   onDescriptionChange = (event) => {
     const description = event.target.value;
@@ -34,10 +35,26 @@ class ExpenseForm extends Component {
   onFocusChange = ({ focused }) => {
     this.setState(() => ({ calenderFocus: focused }));
   };
+  onsubmit = (event) => {
+    event.preventDefault();
+
+    if (!this.state.description || !this.state.amount) {
+      this.setState(() => ({ error: "Please provide description and amount" }));
+    } else {
+      this.setState(() => ({ error: "" }));
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseInt(this.state.amount, 10),
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note,
+      });
+    }
+  };
   render() {
     return (
       <div>
-        <form>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onsubmit}>
           <input
             type="text"
             placeholder="Description"
@@ -48,6 +65,7 @@ class ExpenseForm extends Component {
           <input
             type="number"
             placeholder="Amount"
+            min="0"
             value={this.state.amount}
             onChange={this.onAmountChange}
           />
