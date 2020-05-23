@@ -9,9 +9,9 @@ import {
 } from "../actions/filters";
 import { DateRangePicker } from "react-dates";
 
-class ExpenseListFilter extends Component {
+export class ExpenseListFilter extends Component {
   state = {
-    calenderFocused: null,
+    calendarFocused: null,
   };
 
   onDatesChange = ({ startDate, endDate }) => {
@@ -19,8 +19,8 @@ class ExpenseListFilter extends Component {
     this.props.setEndDate(endDate);
   };
 
-  onFocusChange = (calenderFocused) => {
-    this.setState(() => ({ calenderFocused }));
+  onFocusChange = (calendarFocused) => {
+    this.setState(() => ({ calendarFocused }));
   };
 
   onTextChange = (event) => {
@@ -49,7 +49,7 @@ class ExpenseListFilter extends Component {
           startDate={this.props.filters.startDate}
           endDate={this.props.filters.endDate}
           onDatesChange={this.onDatesChange}
-          focusedInput={this.state.calenderFocused}
+          focusedInput={this.state.calendarFocused}
           onFocusChange={this.onFocusChange}
           showClearDates={true}
           numberOfMonths={1}
