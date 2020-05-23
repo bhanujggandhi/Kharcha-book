@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import numberFormat from "../selectors/number-format";
 
 export const ExpenseListItem = ({ id, description, amount, createdAt }) => {
+  const numberFormat = (value) =>
+    new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+    }).format(value);
   return (
     <div>
       <h3>
