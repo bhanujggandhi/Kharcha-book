@@ -2,6 +2,11 @@
 
 exports[`should render NotFoundPage correctly 1`] = `
 <div>
-  404! Not found
+  404-
+  <NavLink
+    to="/"
+  >
+    Go Home
+  </NavLink>
 </div>
 `;
