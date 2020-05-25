@@ -13,6 +13,20 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-firebase.database().ref().set({
-  name: "bhanujggandhi",
+firebase
+  .database()
+  .ref()
+  .set({
+    name: "bhanujggandhi",
+    age: 19,
+    isSingle: false,
+    location: {
+      city: "Panipat",
+      country: "India",
+    },
+  });
+
+firebase.database().ref("attributes").update({
+  height: 190,
+  weight: 82,
 });
