@@ -33,15 +33,14 @@ database
     console.log("This failed. ", error);
   });
 
-database
-  .ref("attributes")
-  .set({
-    height: 190,
-    weight: 82,
-  })
-  .then(() => {
-    console.log("Second data is saved");
-  })
-  .catch((error) => {
-    console.log("This falied. ", error);
-  });
+//======Removing data=========
+
+// database
+//   .ref("/isSingle")
+//   .remove()
+//   .then(() => {
+//     console.log("Remove Succeeded");
+//   })
+//   .catch((error) => {
+//     console.log("Remove failed: ", error.message);
+//   });
