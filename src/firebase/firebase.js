@@ -13,8 +13,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-firebase
-  .database()
+const database = firebase.database();
+
+database
   .ref()
   .set({
     name: "bhanujggandhi",
@@ -24,9 +25,23 @@ firebase
       city: "Panipat",
       country: "India",
     },
+  })
+  .then(() => {
+    console.log("Data is saved");
+  })
+  .catch((error) => {
+    console.log("This failed. ", error);
   });
 
-firebase.database().ref("attributes").update({
-  height: 190,
-  weight: 82,
-});
+database
+  .ref("attributes")
+  .set({
+    height: 190,
+    weight: 82,
+  })
+  .then(() => {
+    console.log("Second data is saved");
+  })
+  .catch((error) => {
+    console.log("This falied. ", error);
+  });
