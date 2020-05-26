@@ -15,23 +15,27 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database
-  .ref()
-  .set({
-    name: "bhanujggandhi",
-    age: 19,
-    isSingle: false,
-    location: {
-      city: "Panipat",
-      country: "India",
-    },
-  })
-  .then(() => {
-    console.log("Data is saved");
-  })
-  .catch((error) => {
-    console.log("This failed. ", error);
-  });
+// database
+//   .ref()
+//   .set({
+//     name: "bhanujggandhi",
+//     age: 19,
+//     stressLevel: 6,
+//     job: {
+//       title: "Student",
+//       company: "BVCOE",
+//     },
+//     location: {
+//       city: "Panipat",
+//       country: "India",
+//     },
+//   })
+//   .then(() => {
+//     console.log("Data is saved");
+//   })
+//   .catch((error) => {
+//     console.log("This failed. ", error);
+//   });
 
 //======Removing data=========
 
@@ -44,3 +48,35 @@ database
 //   .catch((error) => {
 //     console.log("Remove failed: ", error.message);
 //   });
+
+//=========Updating Data===========
+
+// database.ref().update({
+//   name: "Priyanka Gandhi",
+//   age: 24,
+//   degree: "Doctor",
+//   isSingle: null,
+// });
+
+// database.ref().update({
+//   stressLevel: 9,
+//   "job/company": "IIT Delhi",
+//   "location/city": "New Delhi",
+// });
+
+//========== Reading Data=========
+
+// database
+//   .ref()
+//   .once("value")
+//   .then((snapshot) => {
+//     const val = snapshot.val();
+//     console.log(val);
+//   })
+//   .catch((error) => {
+//     console.log("Error: ", error);
+//   });
+
+// const onValueChange =  database.ref().on("value", (snapshot) => {
+//   console.log(snapshot.val());
+// });
