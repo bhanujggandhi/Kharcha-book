@@ -16,6 +16,40 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // database
+//   .ref("expenses")
+//   .once("value")
+//   .then((snpashot) => {
+//     const expenses = [];
+
+//     snpashot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val(),
+//       });
+//     });
+//     console.log(expenses);
+//   });
+
+database.ref("expenses").on("value", (snpashot) => {
+  const expenses = [];
+
+  snpashot.forEach((childSnapshot) => {
+    expenses.push({
+      id: childSnapshot.key,
+      ...childSnapshot.val(),
+    });
+  });
+  console.log(expenses);
+});
+
+// database.ref("expenses").push({
+//   description: "chill",
+//   amount: 5500,
+//   note: "",
+//   createdAt: 294387907340,
+// });
+
+// database
 //   .ref()
 //   .set({
 //     name: "bhanujggandhi",
