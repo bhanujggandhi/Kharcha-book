@@ -15,6 +15,10 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
+export { firebase, database as default };
+
+//========References==========
+
 // database
 //   .ref("expenses")
 //   .once("value")
@@ -30,17 +34,17 @@ const database = firebase.database();
 //     console.log(expenses);
 //   });
 
-database.ref("expenses").on("value", (snpashot) => {
-  const expenses = [];
+// database.ref("expenses").on("value", (snpashot) => {
+//   const expenses = [];
 
-  snpashot.forEach((childSnapshot) => {
-    expenses.push({
-      id: childSnapshot.key,
-      ...childSnapshot.val(),
-    });
-  });
-  console.log(expenses);
-});
+//   snpashot.forEach((childSnapshot) => {
+//     expenses.push({
+//       id: childSnapshot.key,
+//       ...childSnapshot.val(),
+//     });
+//   });
+//   console.log(expenses);
+// });
 
 // database.ref("expenses").push({
 //   description: "chill",
