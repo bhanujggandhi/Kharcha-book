@@ -16,7 +16,7 @@ export class EditExpensePage extends Component {
   render() {
     return (
       <div>
-        <div className="pager-header">
+        <div className="page-header">
           <div className="content-container">
             <h1 className="page-header__title">Edit Expense</h1>
           </div>
