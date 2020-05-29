@@ -1,22 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Header correctly 1`] = `
-<header>
-  <h1>
-    Expense Manager
-  </h1>
-  <NavLink
-    activeClassName="is-active"
+<header
+  className="header"
+>
+  <Link
+    className="header__title"
     to="/dashboard"
   >
-    Dashboard
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    to="/create"
-  >
-    Create Expense
-  </NavLink>
+    <h1>
+      Kharcha Book
+    </h1>
+  </Link>
   <button
     onClick={[Function]}
   >
