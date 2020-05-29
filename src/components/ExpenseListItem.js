@@ -1,22 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import numberFormat from "../selectors/number-format";
 
 export const ExpenseListItem = ({ id, description, amount, createdAt }) => {
-  const numberFormat = (value) =>
-    new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-    }).format(value);
   return (
-    <div>
-      <h3>
-        <Link to={`/edit/${id}`}>{description}</Link>
-      </h3>
-      <p>
-        {numberFormat(amount)}-{moment(createdAt).format("MMMM Do, YYYY")}
-      </p>
-    </div>
+    <Link className="list-item" to={`/edit/${id}`}>
+      <div>
+        <h3 className="list-item__title">{description}</h3>
+        <span className="list-item__sub-title">
+          {moment(createdAt).format("MMMM Do, YYYY")}
+        </span>
+      </div>
+      <h3 className="list-item__data">{numberFormat(amount)}</h3>
+    </Link>
   );
 };
 
