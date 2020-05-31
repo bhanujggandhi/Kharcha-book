@@ -8,6 +8,7 @@ import PageNotFound from "../components/PageNotFound";
 import LoginPage from "../components/LoginPage";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import Footer from "../components/Footer";
 
 export const history = createBrowserHistory();
 
@@ -21,6 +22,7 @@ const AppRouter = () => (
         <PrivateRoute path="/edit/:id" component={EditExpensePage} />
         <Route component={PageNotFound}></Route>
       </Switch>
+      <Footer />
     </div>
   </Router>
 );
